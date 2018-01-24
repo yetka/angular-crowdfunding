@@ -20,7 +20,7 @@ export class ProjectDetailsComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.projectId = urlParameters['id'];
     });
-    this.projectToDisplay = this.projectService.getProjectById(this.$key);
+    this.projectToDisplay = this.projectService.getProjectById(this.projectId);
   }
 
 }

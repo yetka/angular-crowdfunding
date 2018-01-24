@@ -21,7 +21,7 @@ export class ProjectListComponent implements OnInit {
     this.projects = this.projectService.getProjects();
   }
 
-  goToDetailPage(clickedProject: Project) {
+  goToDetailPage(clickedProject) {
     this.router.navigate(['project', clickedProject.$key]);
   }
 

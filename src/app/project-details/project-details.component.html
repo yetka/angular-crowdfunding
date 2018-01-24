@@ -1,3 +1,9 @@
-<p>
-  project-details works!
-</p>
+<h3>Details for {{(projectToDisplay | async)?.name}}</h3>
+
+<ul>
+  <li>Manager: {{(projectToDisplay | async)?.manager}}</li>
+  <li>Project description: {{(projectToDisplay | async)?.description}}</li>
+  <li>Funding Goal: ${{(projectToDisplay | async)?.fundingGoal}}</li>
+  <li>These funds will go towards: {{(projectToDisplay | async)?.fundDirective}}</li>
+  <li>All donors will receive: {{(projectToDisplay | async)?.donorRewards}}</li>
+</ul>
