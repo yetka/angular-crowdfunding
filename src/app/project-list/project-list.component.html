@@ -1,6 +1,6 @@
 <h3>Here is a list of all projects on our site</h3>
 <br>
-<div *ngFor="let project of projects | async" class="panel panel-default">
+<div *ngFor="let project of projects | async | hasGoalBeenReached:filterByGoal" class="panel panel-default">
   <div class="panel-body">
     <h6 (click)="goToDetailPage(project)"><em>{{project.name}}</em> by {{project.manager}}</h6>
   </div>

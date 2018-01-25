@@ -13,8 +13,9 @@ import { Project } from '../project.model';
 })
 export class ProjectDetailsComponent implements OnInit {
   projectId: string;
-  projectToDisplay: Project;
+  projectToDisplay;
   projectToUpdate: Project;
+
 
   constructor(private route: ActivatedRoute, private location: Location, private projectService: ProjectService) { }
 
@@ -38,7 +39,6 @@ export class ProjectDetailsComponent implements OnInit {
     this.projectToUpdate.fundsRaised += parseInt(donationAmount, 10);
     this.projectService.addDonation(this.projectToUpdate);
     this.projectService.hasGoalBeenReached(this.projectToUpdate);
-    console.log(this.projectToUpdate);
   }
 
 }

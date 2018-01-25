@@ -12,6 +12,7 @@ import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { AddProjectComponent } from './add-project/add-project.component';
 import { EditProjectComponent } from './edit-project/edit-project.component';
+import { HasGoalBeenReachedPipe } from './has-goal-been-reached.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -26,7 +27,8 @@ export const firebaseConfig = {
     ProjectListComponent,
     ProjectDetailsComponent,
     AddProjectComponent,
-    EditProjectComponent
+    EditProjectComponent,
+    HasGoalBeenReachedPipe
   ],
   imports: [
     BrowserModule,

@@ -7,7 +7,7 @@ export class ProjectService {
   projects: FirebaseListObservable<any[]>;
 
   constructor(private database: AngularFireDatabase) {
-  this.projects = database.list('projects');
+    this.projects = database.list('projects');
   }
 
   getProjects() {
