@@ -36,6 +36,12 @@ export class ProjectService {
     projectEntryInFirebase.update({fundsRaised: projectReceivingDonation.fundsRaised})
   }
 
-
+  hasGoalBeenReached(localProject) {
+    if (localProject.fundsRaised >= localProject.fundingGoal) {
+      localProject.goalReached = true;
+    }
+    const projectEntryInFirebase = this.getProjectById(localProject.$key);
+    projectEntryInFirebase.update({goalReached: localProject.goalReached});
+  }
 
 }

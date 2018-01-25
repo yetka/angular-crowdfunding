@@ -13,7 +13,8 @@ import { Project } from '../project.model';
 })
 export class ProjectDetailsComponent implements OnInit {
   projectId: string;
-  projectToDisplay: Project = 0;
+  projectToDisplay: Project;
+  projectToUpdate: Project;
 
   constructor(private route: ActivatedRoute, private location: Location, private projectService: ProjectService) { }
 
@@ -34,10 +35,10 @@ export class ProjectDetailsComponent implements OnInit {
   }
 
   makeDonation(donationAmount: string) {
-    console.log(this.projectToUpdate.fundsRaised);
     this.projectToUpdate.fundsRaised += parseInt(donationAmount, 10);
-    console.log(this.projectToUpdate);
     this.projectService.addDonation(this.projectToUpdate);
+    this.projectService.hasGoalBeenReached(this.projectToUpdate);
+    console.log(this.projectToUpdate);
   }
 
 }
