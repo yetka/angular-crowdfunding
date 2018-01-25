@@ -1,29 +1,29 @@
 <h4>Edit Project</h4>
 
 <label>New Name:</label>
-<input [(ngModel)]="selectedProject.name">
+<input [(ngModel)]="projectToDisplay.name">
 <br>
 
 <label>New Manager:</label>
-<input [(ngModel)]="selectedProject.manager">
+<input [(ngModel)]="projectToDisplay.manager">
 <br>
+<p>{{projectToDisplay.name}}</p>
 
 <label>New Description:</label>
-<input [(ngModel)]="selectedProject.description">
+<input [(ngModel)]="projectToDisplay.description">
 <br>
 
 <label>New Funding Goal:</label>
-<input [(ngModel)]="selectedProject.fundingGoal">
+<input [(ngModel)]="projectToDisplay.fundingGoal">
 <br>
 
 <label>New Fund Directive:</label>
-<input [(ngModel)]="selectedProject.fundDirective">
+<input [(ngModel)]="projectToDisplay.fundDirective">
 <br>
 
 <label>New Donor Rewards:</label>
-<input [(ngModel)]="selectedProject.donorRewards">
+<input [(ngModel)]="projectToDisplay.donorRewards">
 <br>
 
-<button (click)="beginUpdatingProject(selectedProject)">Update</button>
+<button (click)="beginUpdatingProject(projectToDisplay)" routerLink=''>Update</button>
 <br>
-<hr>
