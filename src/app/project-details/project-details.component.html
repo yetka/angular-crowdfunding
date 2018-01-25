@@ -6,4 +6,9 @@
   <li>Funding Goal: ${{(projectToDisplay | async)?.fundingGoal}}</li>
   <li>These funds will go towards: {{(projectToDisplay | async)?.fundDirective}}</li>
   <li>All donors will receive: {{(projectToDisplay | async)?.donorRewards}}</li>
+  <li>Funds received: {{(projectToDisplay | async)?.fundsReceived}}</li>
 </ul>
+
+<a routerLink="edit-project">Edit Project</a>
+
+<button (click)="beginDeletingProject(projectToDisplay)" routerLink="">Delete</button>

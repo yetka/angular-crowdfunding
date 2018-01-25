@@ -1,3 +1,29 @@
-<p>
-  edit-project works!
-</p>
+<h4>Edit Project</h4>
+
+<label>New Name:</label>
+<input [(ngModel)]="selectedProject.name">
+<br>
+
+<label>New Manager:</label>
+<input [(ngModel)]="selectedProject.manager">
+<br>
+
+<label>New Description:</label>
+<input [(ngModel)]="selectedProject.description">
+<br>
+
+<label>New Funding Goal:</label>
+<input [(ngModel)]="selectedProject.fundingGoal">
+<br>
+
+<label>New Fund Directive:</label>
+<input [(ngModel)]="selectedProject.fundDirective">
+<br>
+
+<label>New Donor Rewards:</label>
+<input [(ngModel)]="selectedProject.donorRewards">
+<br>
+
+<button (click)="beginUpdatingProject(selectedProject)">Update</button>
+<br>
+<hr>

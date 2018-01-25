@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../project.service';
+import { Project } from '../project.model';
 
 @Component({
   selector: 'app-add-project',
@@ -14,4 +15,8 @@ export class AddProjectComponent implements OnInit {
   ngOnInit() {
   }
 
+  submitForm(name: string, manager: string, description: string, fundingGoal: string, fundDirective: string, donorRewards: string) {
+    const newProject: Project = new Project(name, manager, description, parseInt(fundingGoal, 10), fundDirective, donorRewards);
+    this.projectService.addProject(newProject);
+  };
 }

@@ -22,14 +22,13 @@ export class ProjectService {
     return this.database.object('projects/' + projectId);
   }
 
-  // updateProject(localUpdatedProject) {
-  //   const projectEntryInFirebase = this.getProjectById(localUpdatedProject.$key);
-  //   projectEntryInFirebase.update({name: localUpdatedProject.name, manager: localUpdatedProject.manager, description: localUpdatedProject.description, fundingGoal: localUpdatedProject.fundingGoal, fundDirective: localUpdatedProject.fundDirective, donorRewards: localUpdatedProject.donorRewards});
-  // }
+  updateProject(localUpdatedProject) {
+    const projectEntryInFirebase = this.getProjectById(localUpdatedProject.$key);
+    projectEntryInFirebase.update({name: localUpdatedProject.name, manager: localUpdatedProject.manager, description: localUpdatedProject.description, fundingGoal: parseInt(localUpdatedProject.fundingGoal, 10), fundDirective: localUpdatedProject.fundDirective, donorRewards: localUpdatedProject.donorRewards});
+  }
 
-  // deletedProject(localProjectToDelete) {
-  //   const ProjectEntryInFirebase = this.getProjectById(localProjectToDelete.$key);
-  //   ProjectEntryInFirebase.remove();
-  // }
+  deleteProject(localProjectToDelete) {
+    localProjectToDelete.remove();
+  }
 
 }

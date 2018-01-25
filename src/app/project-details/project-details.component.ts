@@ -21,6 +21,14 @@ export class ProjectDetailsComponent implements OnInit {
       this.projectId = urlParameters['id'];
     });
     this.projectToDisplay = this.projectService.getProjectById(this.projectId);
+    console.log(this.projectToDisplay);
+  }
+
+  beginDeletingProject(projectToDelete) {
+    console.log(projectToDelete);
+    if(confirm("Are you sure you want to delete this project from the database?")) {
+      this.projectService.deleteProject(projectToDelete);
+    }
   }
 
 }
