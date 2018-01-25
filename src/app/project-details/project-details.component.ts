@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { ProjectService } from '../project.service';
 import { FirebaseObjectObservable } from 'angularfire2/database';
+import { Project } from '../project.model';
 
 @Component({
   selector: 'app-project-details',
@@ -12,7 +13,7 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
 })
 export class ProjectDetailsComponent implements OnInit {
   projectId: string;
-  projectToDisplay;
+  projectToDisplay: Project = 0;
 
   constructor(private route: ActivatedRoute, private location: Location, private projectService: ProjectService) { }
 
@@ -21,12 +22,22 @@ export class ProjectDetailsComponent implements OnInit {
       this.projectId = urlParameters['id'];
     });
     this.projectToDisplay = this.projectService.getProjectById(this.projectId);
+    this.projectService.getProjectById(this.projectId).subscribe(dataLastEmittedFromObserver => {
+      this.projectToUpdate = dataLastEmittedFromObserver;
+    });
   }
 
   beginDeletingProject(projectToDelete) {
     if(confirm("Are you sure you want to delete this project from the database?")) {
       this.projectService.deleteProject(projectToDelete);
     }
+  }
+
+  makeDonation(donationAmount: string) {
+    console.log(this.projectToUpdate.fundsRaised);
+    this.projectToUpdate.fundsRaised += parseInt(donationAmount, 10);
+    console.log(this.projectToUpdate);
+    this.projectService.addDonation(this.projectToUpdate);
   }
 
 }

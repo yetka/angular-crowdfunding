@@ -31,4 +31,11 @@ export class ProjectService {
     localProjectToDelete.remove();
   }
 
+  addDonation(projectReceivingDonation) {
+    const projectEntryInFirebase = this.getProjectById(projectReceivingDonation.$key);
+    projectEntryInFirebase.update({fundsRaised: projectReceivingDonation.fundsRaised})
+  }
+
+
+
 }
