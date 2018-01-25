@@ -14,6 +14,10 @@ const appRoutes: Routes = [
   {
     path: 'project/:id',
     component: ProjectDetailsComponent
+  },
+  {
+    path: 'add-project',
+    component: AddProjectComponent
   }
 ];
 

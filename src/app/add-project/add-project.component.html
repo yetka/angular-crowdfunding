@@ -1,3 +1,42 @@
-<p>
-  add-project works!
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add new Project to list</h3>
+  </div>
+  <div class="panel-body">
+    <div>
+      <div>
+        <label>Project Name:</label>
+        <br>
+        <input #newName>
+      </div>
+
+      <div>
+        <label>Project Manager(s):</label>
+        <br>
+        <input #newManager>
+      </div>
+
+      <div>
+        <label>Project Description:</label>
+        <br>
+        <textarea #newDescription></textarea>
+      </div>
+      <div>
+        <label>Funding goal for project:</label>
+        <br>
+        <input #newFundingGoal>
+      </div>
+      <div>
+        <label>Funds will be used for:</label>
+        <br>
+        <input #newFundDirective>
+      </div>
+      <div>
+        <label>Donors will receive:</label>
+        <br>
+        <input #newDonorRewards>
+      </div>
+      <button (click)="submitForm(newName.value, newManager.value, newDescription.value, newFundingGoal.value, newFundDirective.value, newDonorRewards.value); newName.value=''; newManager.value=''; newDescription.value=''; newFundingGoal.value=''; newFundDirective.value=''; newDonorRewards.value=''">Add</button>
+    </div>
+  </div>
+</div>
