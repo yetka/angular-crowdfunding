@@ -8,6 +8,7 @@ import { Project } from './project.model';
 export class HasGoalBeenReachedPipe implements PipeTransform {
 
   transform(input: Project[], goalReached) {
+    //if(input) statement handles the error that ocurs when file is loading data from database and our input not existing for that time
     if (input) {
       const output: Project[] = [];
       if (goalReached === true) {
